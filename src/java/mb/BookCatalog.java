@@ -9,7 +9,7 @@ package mb;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.enterprise.context.SessionScoped;
+//import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 
 /**
@@ -17,7 +17,7 @@ import javax.faces.bean.ManagedBean;
  * @author pingeso
  */
 @ManagedBean
-@SessionScoped
+//@SessionScoped
 public class BookCatalog implements Serializable {
 
     private List<Book> books;

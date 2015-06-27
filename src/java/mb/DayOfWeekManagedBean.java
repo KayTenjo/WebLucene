@@ -7,14 +7,14 @@
 package mb;
 
 import javax.inject.Named;
-import javax.enterprise.context.Dependent;
+//import javax.enterprise.context.Dependent;
 
 /**
  *
  * @author pingeso
  */
 @Named(value = "dayOfWeekManagedBean")
-@Dependent
+//@Dependent
 public class DayOfWeekManagedBean {
 
     /**

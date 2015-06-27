@@ -13,7 +13,7 @@
             <h:form>
 
                 <p:inputText value="#{bookCatalog.user_input}"/>
-                <p:commandButton value=" GO!" actionListener="#{bookCatalog.submit}" style="margin-left: 10px"/>
+                <p:commandButton value=" GO!" action="table" actionListener="#{bookCatalog.submit}" style="margin-left: 10px" />
                 <h:link value="Ir a la otra wea" outcome="table" >
                     <f:param name="" value="" />
                 </h:link>
