@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <div class="">
+            <h1>Resultados de la búsqueda</h1>
+            <h:form>
+                
+                <p:dataTable value="#{bookCatalog.list}" var="product">
+                    <p:column>
+<!--                        <h:link value="#{product.d.title}" outcome="product_detail" >
+                            <f:param name="producto" value="#{product.title}"/>
+                        </h:link>-->
+                        <h:outputText style="font-size: 24px; font-weight: bold" value="#{product.title}" /> / 
+                        <h:outputText style="font-size: 20px;" value="US$: #{product.price}" />
+                        <p:dataTable value="#{product.reviews}" var="value">
+                            <p:column headerText="Puntaje">
+                                <h:outputText value="#{value.score}"/>
+                            </p:column>
+                            <p:column headerText="Titulo del comentario">
+                                <h:outputText value="#{value.summary}"/>
+                            </p:column>
+                            <p:column headerText="Utilidad">
+                                <h:outputText value="#{value.positiveVotes}"/> /
+                            
+                                <h:outputText value="#{value.totalVotes}"/>
+                            </p:column>
+                            <p:column headerText="Emocion">
+                                <h:outputText value="#{value.emotion}"/>
+                            </p:column>
+                        </p:dataTable>
+                    </p:column>
+
+                </p:dataTable>
+
+                <br></br>
+                <h:link value="Volver al resultado de los productos" outcome="index"></h:link>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

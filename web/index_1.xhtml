@@ -11,12 +11,13 @@
         <h1 style="text-align: center; margin-top: 5%; margin-bottom: 10%">Food Search</h1>
         <div style="text-align: center">
             <h:form>
-
-                <p:inputText value="#{bookCatalog.user_input}" />
-                <p:commandButton value=" GO!" actionListener="#{bookCatalog.submit}" style="margin-left: 10px" />
-                <h:link value="Ir a la otra wea" outcome="table" >
-                    <f:param name="" value="" />
-                </h:link>
+                <p:inputText value="#{bookCatalog.user_input}"/>
+                <p:commandButton value=" GO!"  style="margin-left: 10px" action="table_1">
+                </p:commandButton>
+<!--                <h:link value="Ir a la otra wea" outcome="table" >
+                    
+                </h:link>-->
+                
             </h:form>
         </div>
     </h:body>

@@ -49,9 +49,10 @@ public class ReaderClass {
         //analyzerWrapper= this.createAnalyzer();
     }
 
-    public void search(String consulta) throws ParseException, IOException {
+    public List<Album> search(String consulta) throws ParseException, IOException {
 
         //Path indexPath = Paths.get("C:\\index\\");
+        System.out.println("Entré! fuck");
         File indexPath = new File("C:\\index\\");
         Directory dir = FSDirectory.open(indexPath);
 
@@ -115,6 +116,8 @@ public class ReaderClass {
                 i++;
             }
         }
+        return lista_album;
+                
 
     }
 
