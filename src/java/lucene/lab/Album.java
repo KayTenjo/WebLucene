@@ -12,9 +12,53 @@ import org.apache.lucene.document.Document;
  * @author Rodrigo
  */
 public class Album implements Comparable<Album>{
-    Document d;
-    Double score;    
-    float luceneScore;
+    public Document d;
+    public Double score;    
+    public float luceneScore;
+    public String title;
+    public String artist;
+
+    public Document getD() {
+        return d;
+    }
+
+    public void setD(Document d) {
+        this.d = d;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    public float getLuceneScore() {
+        return luceneScore;
+    }
+
+    public void setLuceneScore(float luceneScore) {
+        this.luceneScore = luceneScore;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+ 
+    
 
     @Override
     public int compareTo(Album o) {

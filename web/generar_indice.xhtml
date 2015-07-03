@@ -1,5 +1,10 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
@@ -11,8 +16,9 @@
         <h1 style="text-align: center; margin-top: 5%; margin-bottom: 10%">Musearch</h1>
         <div style="text-align: center">
             <h:form>
-                <p:inputText value="#{bookCatalog.user_input}"/>
-                <p:commandButton value=" GO!" actionListener="#{bookCatalog.submit}" style="margin-left: 10px" action="table_1" />
+                <p:inputText value="#{generarIndice.submit()}"/>
+                <p:commandButton value=" GO!"  style="margin-left: 10px" action="table_1">
+                </p:commandButton>
 <!--                <h:link value="Ir a la otra wea" outcome="table" >
                     
                 </h:link>-->
@@ -21,4 +27,3 @@
         </div>
     </h:body>
 </html>
-

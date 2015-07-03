@@ -64,11 +64,11 @@ public class IndexClass {
         
         
         malletClass mallet = new malletClass();
-        File archivo_clasificador = new File("music.classifier");
+        File archivo_clasificador = new File("C:\\index\\music.classifier");
         Classifier clasificador = mallet.loadClassifier(archivo_clasificador);
         
         
-                Map<String, Analyzer> analyzerPerField = new HashMap<>();
+        Map<String, Analyzer> analyzerPerField = new HashMap<>();
         
         analyzerPerField.put("productId", new WhitespaceAnalyzer() ); 
         analyzerPerField.put("title", new WhitespaceAnalyzer() );
@@ -107,10 +107,10 @@ public class IndexClass {
         
         PerFieldAnalyzerWrapper analyzerWrapper = new PerFieldAnalyzerWrapper(new StandardAnalyzer(), analyzerPerField);
                
-        //Path indexPath = Paths.get("C:\\index\\");
-        File indexPath = new File("C:\\index\\");
+        Path indexPath = Paths.get("C:\\index\\");
+        //File indexPath = new File("C:\\index\\");
         Directory directory = FSDirectory.open(indexPath);
-        IndexWriterConfig config = new IndexWriterConfig(Version.LATEST, analyzerWrapper);
+        IndexWriterConfig config = new IndexWriterConfig(analyzerWrapper);
         config.setRAMBufferSizeMB(512.0);
         IndexWriter iwriter = new IndexWriter(directory, config);
         

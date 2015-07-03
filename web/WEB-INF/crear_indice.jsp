@@ -1,9 +1,12 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+<%-- 
+    Document   : crear_indice
+    Created on : 27-06-2015, 10:28:49
+    Author     : Rodrigo
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
     <h:head>
         <title>Musearch: Búsqueda de álbumes </title>
     </h:head>
@@ -12,7 +15,8 @@
         <div style="text-align: center">
             <h:form>
                 <p:inputText value="#{bookCatalog.user_input}"/>
-                <p:commandButton value=" GO!" actionListener="#{bookCatalog.submit}" style="margin-left: 10px" action="table_1" />
+                <p:commandButton value=" GO!"  style="margin-left: 10px" action="table_1">
+                </p:commandButton>
 <!--                <h:link value="Ir a la otra wea" outcome="table" >
                     
                 </h:link>-->
@@ -21,4 +25,3 @@
         </div>
     </h:body>
 </html>
-

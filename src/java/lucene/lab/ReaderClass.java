@@ -51,9 +51,9 @@ public class ReaderClass {
 
     public List<Album> search(String consulta) throws ParseException, IOException {
 
-        //Path indexPath = Paths.get("C:\\index\\");
+        Path indexPath = Paths.get("C:\\index\\");
         System.out.println("Entré! fuck");
-        File indexPath = new File("C:\\index\\");
+        //File indexPath = new File("C:\\index\\");
         Directory dir = FSDirectory.open(indexPath);
 
         IndexReader reader = DirectoryReader.open(dir);
@@ -70,7 +70,7 @@ public class ReaderClass {
         int hitsPerPage = 100;
         //IndexReader reader = IndexReader.open(index);
         //IndexSearcher searcher = new IndexSearcher(reader);
-        TopScoreDocCollector collector = TopScoreDocCollector.create(hitsPerPage,true);
+        TopScoreDocCollector collector = TopScoreDocCollector.create(hitsPerPage);
         searcher.search(query, collector);
         ScoreDoc[] hits = collector.topDocs().scoreDocs;
 
@@ -103,6 +103,8 @@ public class ReaderClass {
             for (Album album : lista_album) {
 
                 album.formulaRanking(maxLuceneScore, max_cant_comentarios);
+                album.title = album.d.get("title");
+                album.artist = album.d.get("artist");
                 //System.out.println(album.score);
             }
 

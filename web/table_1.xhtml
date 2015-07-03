@@ -8,6 +8,9 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Facelet Title</title>
+        <f:metadata>
+            <f:viewParam name="id" value="Title"/>
+        </f:metadata>
     </h:head>
     <h:body>
         <div class="">
@@ -19,24 +22,9 @@
 <!--                        <h:link value="#{product.d.title}" outcome="product_detail" >
                             <f:param name="producto" value="#{product.title}"/>
                         </h:link>-->
-                        <h:outputText style="font-size: 24px; font-weight: bold" value="#{product.title}" /> / 
-                        <h:outputText style="font-size: 20px;" value="US$: #{product.price}" />
-                        <p:dataTable value="#{product.reviews}" var="value">
-                            <p:column headerText="Puntaje">
-                                <h:outputText value="#{value.score}"/>
-                            </p:column>
-                            <p:column headerText="Titulo del comentario">
-                                <h:outputText value="#{value.summary}"/>
-                            </p:column>
-                            <p:column headerText="Utilidad">
-                                <h:outputText value="#{value.positiveVotes}"/> /
-                            
-                                <h:outputText value="#{value.totalVotes}"/>
-                            </p:column>
-                            <p:column headerText="Emocion">
-                                <h:outputText value="#{value.emotion}"/>
-                            </p:column>
-                        </p:dataTable>
+                        <h:outputText style="font-size: 24px; font-weight: bold" value="#{product}" />  
+                        <h:outputText style="font-size: 20px;" value="US$: #{product}" />
+                       
                     </p:column>
 
                 </p:dataTable>

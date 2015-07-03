@@ -22,48 +22,35 @@ import org.apache.lucene.queryparser.classic.ParseException;
  */
 @ManagedBean
 //@SessionScoped
-public class BookCatalog implements Serializable {
+public class generarIndice implements Serializable {
 
     private List<Book> books;
     private String user_input;
-    private List<Album> list = new ArrayList<>();
+    private List<String> list;
 
 
     //private theRealProducto tp;
     private String id;
     
     
-    public BookCatalog() {
+    public generarIndice() {
        
     }
-     public void submit() throws IOException, ParseException{
+     public void submit() throws IOException, ParseException, Exception{
 
     //public String submit() throws IOException, ParseException{
-        this.user_input = user_input;
-        System.out.println(user_input);
-         System.out.println(user_input);
-        System.out.println("Me llamó :/");        //Función del lucho 
-        ReaderClass search = new ReaderClass();
-        List<Album> list_aux = search.search(user_input);
+        IndexClass index = new IndexClass();
+        index.Indexer();
+        
         System.out.println("Hice algo, yey");
-        
-        
-        for(Album album: list_aux){
-            
-            //album.title = album.title;
-            //album.artist = album.d.get("artist");
-            //album.setArtist(album.getD().get("artist"));
-            
-            list.add(album);
-        }
-        //return "/";
+        this.list.add("yey");
     }
     
-    public List<Album> getList() {
+        public List<String> getList() {
         return list;
     }
 
-    public void setList(List<Album> list) {
+    public void setList(List<String> list) {
         this.list = list;
     }
 
