@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <div class="">
+            <h1>Resultados de la búsqueda</h1>
+            <h:form>
+                
+                <p:dataTable value="#{album.prueba}" var="book">
+                    <p:column>
+<!--                        <h:link value="#{book}" outcome="product_detail" >
+<f:param name="producto" value="#{bookCatalog.list}"/>
+                        </h:link>-->
+                        <h:outputText style="font-size: 24px; font-weight: bold" value="#{book}" /> 
+                    </p:column>
+
+                </p:dataTable>
+
+                <br></br>
+                <h:link value="Volver al resultado de los productos" outcome="index_1"></h:link>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+
